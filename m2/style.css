@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 70px;
+    display: grid;
+    grid-template-columns: 190px auto 50px;
+    column-gap: 30px;
+    background-color: #2c2c54;
+    padding: 10px 15px;
+    color: white;
+}
+
+header .logo {
+    height: 50px;
+    width: 200px;
+    background-color: #fff;
+    border: 2px solid #d4af37;
+    background-image: url(https://lihtaryk.com.ua/wp-content/uploads/2018/03/pikasso-1024x447.jpg);
+    background-size: cover;
+    border-radius: 8px;
+}
+
+header .search input {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0 10px;
+    background-color: white;
+    background-image: url(https://www.iconpacks.net/icons/2/free-search-icon-2911-thumb.png);
+    background-position: calc(100% - 10px); 
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    transition: border-color 0.3s ease;
+}
+
+header .search input:focus {
+    border-color: #2c2c54;
+    outline: none;
+}
+
+header button {
+    height: 50px;
+    width: 50px;
+    background-color: #5a5a88;
+    color: #2c2c54;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+header button:hover {
+    background-color: #fff;
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 210px auto;
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #d4af37;
+    background-color: #f5f5dc;
+}
+
+.container .sidebar {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 20px);
+    row-gap: 20px;
+    padding: 15px;
+    border: 2px solid #d4af37;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+.container .sidebar a {
+    font-size: 16px;
+    color: #2c2c54;
+    text-decoration: none;
+    text-align: left;
+    background-color: #d4af37;
+    padding: 3px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container .sidebar a:hover {
+    background-color: #2c2c54;
+    transform: scale(1.02);
+    color: #d4af37;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 160px);
+    grid-template-rows: repeat(auto-fill, 230px);
+    gap: 15px 30px;
+    height: fit-content;
+}
+
+.content-block {
+    width: 160px;
+    height: 230px;
+    background-color: #2c2c54;
+    border: 2px solid #d6b700;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-block:hover {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.content-block .image-placeholder {
+    height: 140px;
+    background-color: #5a5a88;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content-info {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 80px 50px;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-info button {
+    width: 50px;
+    height: 60px;
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.content-info button:hover {
+    background-color: #fff;
+    color: #d4af37;
+}
+
+.content-text {
+    display: grid;
+    grid-auto-rows: auto;
+    height: 100%;
+    align-items: end;
+    color: #fff;
+}
+
+.content-text h4 {
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.content-text span {
+    font-size: 12px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px 15px;
+    }
+
+    .content-block {
+        width: 100%;
+    }
+
+    .content-info {
+        grid-template-columns: 1fr 50px;
+        justify-content: center;
+
+    }
+
+    .container .sidebar {
+        height: fit-content;
+    }
+
+    .container .sidebar a:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 210px;
+        grid-template-columns: auto;
+    }
+
+    header .logo {
+        align-self: center;
+        justify-self: center;
+    }
+
+    header .search input {
+        align-self: center;
+        justify-self: center;
+        font-size: 14px;
+        background-size: 20px 20px; 
+    }
+
+    header button {
+        width: 80%;
+        align-self: center;
+        justify-self: center;
+        font-size: 14px;
+    }
+
+    .container .sidebar {
+        padding: 10px;
+        row-gap: 10px;
+    }
+}
