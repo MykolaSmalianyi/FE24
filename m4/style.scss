@@ -1,0 +1,133 @@
+$primary-color: #d4af37;
+$secondary-color: #faf3d7;
+$background-color: #fdfdfd;
+$text-color: #333;
+$hover-shadow: rgba(0, 0, 0, 0.1);
+$font-size-large: 18px;
+$font-size-medium: 16px;
+$font-size-small: 14px;
+$font-size-extra-small: 10px;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow: 0 4px 8px $shadow;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  @include box-shadow($hover-shadow);
+  background-color: $background-color;
+  @include border-radius(8px);
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  @include border-radius(8px);
+  @include box-shadow($hover-shadow);
+}
+
+.two-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+
+  img {
+    width: 48%;
+    height: auto;
+    @include border-radius(8px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      @include box-shadow(rgba(0, 0, 0, 0.2));
+    }
+  }
+}
+.main-table {
+  width: 100%;
+  max-width: 1920px;
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  text-align: left;
+  overflow: hidden;
+
+  th {
+    background-color: $primary-color;
+    color: white;
+    border: 1px solid #b38c29;;
+    padding: 12px;
+    font-size: $font-size-medium;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+  td {
+    padding: 15px;
+    border: 1px solid $primary-color;
+    vertical-align: top;
+    background-color: white;
+    color: $text-color;
+    font-size: $font-size-small;
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: $secondary-color;
+    }
+}
+.main-cols {
+  width: 40%;
+}
+
+.third-col {
+  border-left: 2px solid $primary-color;
+  padding-left: 10px;
+}
+
+.secondary-table {
+  font-size: $font-size-extra-small;
+  color: #555;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+@media (max-width: 768px) {
+  .main-table, .secondary-table {
+    width: 100%;
+    font-size: $font-size-small;
+  }
+
+  .main-table td, .main-table th {
+    padding: 8px;
+  }
+
+  .two-images img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .main-table, .secondary-table {
+    width: 100%;
+    font-size: $font-size-small;
+  }
+
+  .main-table td, .main-table th {
+    padding: 8px;
+  }
+
+  .two-images img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
